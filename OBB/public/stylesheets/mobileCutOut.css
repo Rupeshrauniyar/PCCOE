@@ -1,0 +1,32 @@
+
+
+
+.phone-frame {
+    position: relative;
+    width: 330px; /* Adjust width based on your design */
+    height: 650px; /* Adjust height based on your design */
+    background-color: #000;
+    border-radius: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    
+}
+
+
+
+.screen {
+    position: absolute;
+    top: 10px; /* Adjust top position based on your design */
+    left: 10px; /* Adjust left position based on your design */
+    width: calc(100% - 20px); /* Adjust width based on your design */
+    height: calc(100% - 35px); /* Adjust height based on your design */
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.screen-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

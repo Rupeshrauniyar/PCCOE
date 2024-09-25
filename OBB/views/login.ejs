@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon"
+        href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://x.com&size=256">
+
+    
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css" />
+
+    <link rel="stylesheet" href="/stylesheets/mobileCutOut.css">
+</head>
+
+<% if(error.length> 0){%>
+    <div class="w-full fixed z-20 flex flex-col items-center justify-center mt-2">
+        <div class="bg-red-600 py-3 px-10 rounded-md">
+            <h3 class="text-white tracking-widest ">
+                <%= error %>
+            </h3>
+        </div>
+    </div>
+    <% }%>
+
+        <body class="bg-black px-32 text-white">
+
+            <div class="container flex items-center justify-center mt-32">
+
+                <div
+                    class="border border-1 border-zinc-800 w-[400px] h-[380px] rounded-md p-4 ml-10 flex flex-col items-center ">
+                    <form method="post" action="/login" class="flex flex-col items-center w-full">
+                        <div class="w-full flex flex-col items-center p-4">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="text-white fill-current w-8 h-8">
+                                <g>
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </div><!-- Inputs -->
+                        <span class="w-full flex justify-start">
+                            <h2 class="font-extrabold text-white text-xl ml-5 mb-2">Login your account</h2>
+
+                        </span>
+
+                        <input type="text" name="username"
+                            class="border border-zinc-800 bg-black text-white rounded-md  outline-none w-[90%] py-4 px-3 mt-1"
+                            placeholder="Username">
+                        <input type="password" name="password"
+                            class="border border-zinc-800 bg-black text-white rounded-md  outline-none w-[90%] py-4 px-3 mt-1"
+                            placeholder="Password">
+
+                        <input type="submit" value="Login"
+                            class="bg-zinc-800 rounded-full  outline-none w-[90%] py-2 cursor-pointer px-3 text-white font-bold text-lg mt-2 hover:bg-zinc-700">
+                    </form>
+
+                    <span class="flex w-full items-center justify-center mt-4">
+                        <p class="flex items-center">
+                        <div class="bg-gray-200 w-[40%] h-[1px] mr-2"> </div>
+                        <p class="text-md">or</p>
+                        <div class="bg-gray-200 w-[40%] h-[1px] ml-2"> </div>
+                        </p>
+
+                    </span>
+                    <span class="flex items-center justify-center">
+                        <p>Don't have an account?<a href="/register" class="ml-1">
+                                <p class="text-blue-500">Sign up</p>
+                            </a></p>
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </body>
+
+</html>

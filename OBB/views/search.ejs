@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <script>
+        const userId = "<%= user._id %>";
+
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/scrollbar.css">
+    <link rel="icon"
+        href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://x.com&size=256">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/stylesheets/swiper.css">
+</head>
+
+
+
+<body class="text-white bg-black px-32">
+    <div
+        class="displayCommentsCont w-full h-screen flex items-center justify-center fixed overflow-hidden transition-all hidden">
+        <div
+            class="commentsCont w-[50%] h-[50%] rounded-xl bg-[#f0f8ff] overflow-hidden flex flex-col items-center justify-center">
+            <nav class="w-full p-3  flex items-center justify-between   ">
+                <i></i>
+                <i
+                    class="fa-light fa-circle-xmark text-xl cursor-pointer hover:text-red-500 transition-all closeComment  "></i>
+            </nav>
+            <div class="commentHolder flex flex-col w-full h-[70%] overflow-y-auto ">
+
+            </div>
+            <div class="commentInpHolder flex justify-between items-center w-full h-[15%] bg-[#f0f8ff] rounded-md ">
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="bar-cont flex items-center">
+
+
+        <div class="left-bar w-[20%] h-screen ">
+            <!-- Functionalities -->
+
+            <div class="functionsCont flex flex-col items-center justify-center w-full p-4">
+                <div class="w-full flex flex-col  p-4">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="text-white fill-current w-8 h-8">
+                        <g>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <a href="/"
+                    class="mt-2 py-3 px-2 transition-all border-none outline-none text-base tracking-tighter text-white w-full flex rounded-full font-semibold hover:bg-zinc-800 no-underline">
+                    <span class="flex items-center justify-center">
+                        <svg aria-label="Home" class="ml-2 mr-2" fill="currentColor" height="24" role="img"
+                            viewBox="0 0 24 24" width="24">
+                            <title>Home</title>
+                            <path
+                                d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z"
+                                fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        <button class="ml-2"> Home</button>
+
+                    </span>
+                </a>
+                <a href="/search"
+                    class="mt-2 py-3 px-2 transition-all border-none outline-none  font-bold  text-white w-full flex rounded-full hover:bg-zinc-800 no-underline">
+                    <span class="flex items-center justify-center">
+                        <svg aria-label="Search &amp; Explore" class="ml-2 mr-2" fill="currentColor" height="24"
+                            role="img" viewBox="0 0 24 24" width="24">
+                            <title>Search &amp; Explore</title>
+                            <path d="M18.5 10.5a8 8 0 1 1-8-8 8 8 0 0 1 8 8Z" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="3" x1="16.511" x2="21.643" y1="16.511" y2="21.643"></line>
+                        </svg>
+                        <button class="ml-2"> Explore</button>
+
+                    </span>
+                </a>
+
+                <a href="/post"
+                    class="mt-2 py-3 px-2 transition-all border-none outline-none text-base text-white w-full flex rounded-full hover:bg-zinc-800 no-underline">
+                    <span class="flex items-center justify-center">
+                        <svg aria-label="New post" class="ml-2 mr-2" fill="currentColor" height="24" role="img"
+                            viewBox="0 0 24 24" width="24">
+                            <title>New post</title>
+                            <path
+                                d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"></line>
+                        </svg>
+                        <button class="ml-2"> Post</button>
+
+                    </span>
+                </a>
+                <a href="/profile/<%= user._id %>"
+                    class="mt-2 py-3 px-2 transition-all border-none outline-none text-base text-white w-full flex rounded-full hover:bg-zinc-800 no-underline">
+                    <span class="flex items-center justify-center">
+                        <img class="w-[30px] h-[30px] rounded-full ml-2 mr-2" src="<%= user.profilePicture %>">
+                        <button class="ml-2"> Profile</button>
+
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mid-bar w-[55%] h-screen overflow-y-auto">
+            <div class="cont p-16 w-[70%]">
+                <div class="inpCont flex flex-col items-center justify-center">
+                    <input type="text" id="searchInp" placeholder="Search"
+                        class="w-[90%] bg-zinc-800 text-white rounded-full px-3 py-2  outline-none border-none">
+
+                </div>
+                <div class="BORDERDIV h-[0.5px] w-full bg-[#bfbfbf]  rounded-md mb-4 mt-4"></div>
+
+                <div class="usersCont w-full flex flex-col overflow-y-auto">
+
+                    <div class="recent searches">
+                        <h3 class="text-base tracking-tighter">Recent</h3>
+                        <div class="w-full h-full flex flex-col items-center justify-center py-32">
+                            <h3 class="text-base tracking-tighter font-semibold">No recent searches</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+    integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<script src="/javascripts/dropdown.js"></script>
+<script src="/javascripts/viewStories.js"></script>
+<script src="/javascripts/search.js"></script>
+
+</html>

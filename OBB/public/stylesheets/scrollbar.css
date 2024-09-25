@@ -1,0 +1,29 @@
+/* Hide the scrollbar for WebKit browsers */
+.mid-bar::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar */
+}
+
+/* Optional: Customize the container's appearance */
+.mid-bar {
+    /* Ensures that the content is still scrollable */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+}
+
+/* Hide the scrollbar for WebKit browsers */
+.mainDetsCont::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar */
+}
+
+/* Optional: Customize the container's appearance */
+.mainDetsCont {
+    /* Ensures that the content is still scrollable */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+}
